@@ -1,0 +1,53 @@
+Different genomic regions enriched by PCR serve as taxonomic markers for diversity analyses: the V1-V2, the V4, the V9 and the 37F regions of the SSU rRNA gene, as well as the COI mitochondrial gene. The 37F is an hypervariable region that is specific to the diverse group of protists Foraminifera (Pawlowski and Lecroq 2010). The primers combinations employed for each region are presented in Table 1. 
+
+Table 1. Primers information.
+
+Target region	Primer orientation	Primer Name Primer Sequence	Reference
+V1-V2	Forward	F04	GCTTGTCTCAAAGATTAAGCC	Blaxter et al. 1998
+V1-V2	Reverse	R22mod	CCTGCTGCCTTCCTTRGA	Sinniger et al. 2016
+V4	Forward	TAReuk454FWD1	CCAGCASCYGCGGTAATTCC	Stoeck et al. 2010
+V4	Reverse	TAReukREV3	ACTTTCGTTCTTGATYRA	Stoeck et al. 2010
+V9	Forward	1380F	TTGTACACACCGCCC	Amaral-Zettler et al. 2009
+V9	Reverse	1510R	CCTTCYGCAGGTTCACCTAC	Amaral-Zettler et al. 2009
+37F	Forward	s14F1	AAGGGCACCACAAGAACGC	Pawlowski et al. 2002
+37F	Reverse	s15	CCACCTATCACAYAATCATG	Esling et al. 2015
+COI	Forward	mlCOIintF	GGWACWGGWTGAACWGTWTAYCCYCC	Leray et al. 2013COI	Reverse	dgHCO2198	TAAACTTCAGGGTGACCAAARAAYCA	Leray et al. 2013
+
+Environmental DNA is amplified using tagged versions of both the forward and reverse PCR primers in order to label and multiplex the sequences for each of the samples. The combinations of tagged primers used to label the samples multiplexed in each library are chosen according to the recommendation of Esling et al. 2015 and using set_multiplex.py (https://github.com/FranckLejzerowicz/set_multiplex), which later allows the filtering of cross-contaminants resulting from the mistagging phenomenon based on mistag_filter.py (https://github.com/FranckLejzerowicz/mistag_filter). The PCR volume and thermocycing conditions are presented in table 2 and 3, respectively.
+
+Table 2. PCR volumes per session of 12 samples (i.e. 12 primers combinations), including 2 replicates per sample and 6 blank controls.
+
+Ingredient	Initial concentration	Volume per rxn	Volume for 18.5 rxnMolecular grade water	-	7.5	228.75AmpliTaq Gold 360 Master Mix	2X	15	457.5Bovine Serum Albumine	8 g.L-1	2	Primers combination	4 uM each	1.5	-DNA	4 ng.ul-1	4	-Blank controls
+--------------
+In 6 tubes:
+- Distribute 24.5 ul of the PCR mix
+In 4 of these tubes (PCR room controls):- Add 4 ul water (blank)- Add 0.5 ul for 3 different primers combinations in 4 tubes (blank-controlling of all 3*4=12 combinations)
+In the 2 remaining tubes (DNA room controls):
+- Do not add water
+- Add 1.5 ul of any combinationAssays
+------
+In 12 tubes:
+Distribute 49 ul of the PCR mixAdd 3 ul of each of the 12 selected primers combinationsAdd 8 ul environmental DNA
+Transfer 30 ul of each mix into a new tube (PCR replicates)
+Add 4 ul water in the 2 DNA room controls
+
+Table 2. PCR thermocycling conditions (*: touch-down -1C per cycle).
+
+	V1-V2	V4	V9	37F	COIInitial incubation	95 (5')	95 (5')	95 (5')	95 (5')	95 (5')Denaturation	94 (30'')	94 (30'')	94 (30'')	94 (10'')	95 (10'')Hybridization	57 (30'')	57 (45'')	57 (60'')	52 (20'')	62-46* (30'')Elongation	72 (60'')	72 (60'')	72 (90'')	72 (60'')	72 (60'')Cycles	35	10	40	40	16Denaturation	-	94 (30'')	-	-	95 (10'')Hybridization	-	48 (45'')	-	-	46 (30'')Elongation	-	72 (60'')	-	-	72 (60'')Cycles	-	25	-	-	25Final elongation	72 (2')	72 (2')	72 (2')	72 (2')	72 (2')
+
+The resulting double-tagged amplicons are then mixed in equimolar quantities at a rate of c.a. 40 to 50 samples per mix. Each mixture is finally treated using the TruSeq DNA PCR-Free Kit (Illumina) in order to obtain sequencing-ready libraries. In total, only one PCR step per marker is required for this workflow.
+
+Sinniger, Frédéric, et al. "Worldwide analysis of sedimentary DNA reveals major gaps in taxonomic knowledge of deep-sea benthos." Frontiers in Marine Science 3 (2016): 92.
+
+Blaxter, Mark L., et al. A molecular evolutionary framework for the phylum Nematoda. Nature 392.6671 (1998): 71.
+
+Stoeck, Thorsten, et al. Multiple marker parallel tag environmental DNA sequencing reveals a highly complex eukaryotic community in marine anoxic water. Molecular ecology 19.s1 (2010): 21-31.
+
+Amaral-Zettler, Linda A., et al. A method for studying protistan diversity using massively parallel sequencing of V9 hypervariable regions of small-subunit ribosomal RNA genes. PloS one 4.7 (2009): e6372.
+
+Leray, Matthieu, et al. A new versatile primer set targeting a short fragment of the mitochondrial COI region for metabarcoding metazoan diversity: application for characterizing coral reef fish gut contents. Frontiers in zoology 10.1 (2013): 34.
+
+Pawlowski, Jan, et al. Molecular data reveal high taxonomic diversity of allogromiid Foraminifera in Explorers Cove (McMurdo Sound, Antarctica). Polar Biology 25.2 (2002): 96-105.
+
+Esling, Philippe, Franck Lejzerowicz, and Jan Pawlowski. Accurate multiplexing and filtering for high-throughput amplicon-sequencing. Nucleic Acids Research 43.5 (2015): 2513-2524.
+
